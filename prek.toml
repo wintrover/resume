@@ -1,4 +1,5 @@
-default_stages = ["manual"]
+default_stages = ["pre-commit", "manual"]
+default_install_hook_types = ["pre-commit"]
 
 [[repos]]
 repo = "local"
