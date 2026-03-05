@@ -11,7 +11,7 @@ const config = {
 			strict: false
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/wintrover.github.io' : ''
+			base: process.argv.includes('dev') ? '' : (process.env.BASE_PATH ?? '')
 		},
 		prerender: {
 			entries: ['*']
