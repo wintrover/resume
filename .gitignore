@@ -7,6 +7,7 @@ Gemfile.lock
 vendor
 .DS_Store
 node_modules
+# Vite & SvelteKit
 /build
 /.svelte-kit
 /package
@@ -15,3 +16,9 @@ node_modules
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Testing & Coverage
+/coverage
+/.vitest
+*.test.js.snap
+
