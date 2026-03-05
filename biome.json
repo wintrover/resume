@@ -8,14 +8,12 @@
 			"vite.config.js",
 			"svelte.config.js",
 			"vitest.setup.js",
-			".dependency-cruiser.json"
-		],
-		"experimentalScannerIgnores": [
-			"**/node_modules/**",
-			"**/build/**",
-			"**/dist/**",
-			"**/.svelte-kit/**",
-			"static/**"
+			".dependency-cruiser.json",
+			"!!**/node_modules/**",
+			"!!**/build/**",
+			"!!**/dist/**",
+			"!!**/.svelte-kit/**",
+			"!!static/**"
 		]
 	},
 	"vcs": {

@@ -14,7 +14,7 @@
       <LanguageSwitcher />
       <div class="contact-info">
         <p><strong>Email:</strong> wintrover@gmail.com</p>
-        <p><strong>Homepage:</strong> wintrover.github.io</p>
+        <p><strong>Homepage:</strong> wintrover.github.io/resume</p>
       </div>
       <div class="no-print additional-links">
         <a href="https://github.com/wintrover" target="_blank" rel="noopener noreferrer">
@@ -23,7 +23,7 @@
         <a href="https://linkedin.com/in/suhyok-yun-1934b713a" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://wintrover.github.io/blog" target="_blank" rel="noopener noreferrer">
+        <a href="https://wintrover.github.io/" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-blogger"></i>
         </a>
       </div>

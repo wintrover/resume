@@ -5,7 +5,7 @@
 	"type": "module",
 	"description": "윤수혁의 개인 포트폴리오 웹사이트 - Svelte로 구축",
 	"author": "윤수혁 <wintrover@gmail.com>",
-	"homepage": "https://wintrover.github.io",
+	"homepage": "https://wintrover.github.io/resume",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
