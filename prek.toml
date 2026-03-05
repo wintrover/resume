@@ -1,0 +1,10 @@
+default_stages = ["manual"]
+
+[[repos]]
+repo = "local"
+hooks = [
+  { id = "biome", name = "Biome", language = "system", entry = "npm run -s biome:ci", pass_filenames = false, always_run = true, priority = 0 },
+  { id = "typecheck", name = "Typecheck", language = "system", entry = "npm run -s typecheck", pass_filenames = false, always_run = true, priority = 0 },
+  { id = "knip", name = "Knip", language = "system", entry = "npm run -s knip", pass_filenames = false, always_run = true, priority = 0 },
+  { id = "depcruise", name = "Dependency Cruiser", language = "system", entry = "npm run -s depcruise", pass_filenames = false, always_run = true, priority = 0 },
+]

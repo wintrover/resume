@@ -1,3 +1,3 @@
-declare module 'svelte' {
-  export type Snippet = unknown;
+declare module "svelte" {
+	export type Snippet = unknown;
 }

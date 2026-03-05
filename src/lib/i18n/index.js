@@ -1,10 +1,10 @@
-import { browser } from '$app/environment';
-import { init, register } from 'svelte-i18n';
+import { init, register } from "svelte-i18n";
+import { browser } from "$app/environment";
 
-const defaultLocale = 'ko';
+const defaultLocale = "ko";
 
-register('ko', () => import('./locales/ko.json'));
-register('en', () => import('./locales/en.json'));
+register("ko", () => import("./locales/ko.json"));
+register("en", () => import("./locales/en.json"));
 
 init({
 	fallbackLocale: defaultLocale,

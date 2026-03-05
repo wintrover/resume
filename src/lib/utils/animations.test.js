@@ -1,6 +1,12 @@
-import fc from 'fast-check';
-import { describe, expect, it, vi } from 'vitest';
-import { createScrollObserver, fadeInUp, scaleIn, slideInLeft, slideInRight } from './animations.js';
+import fc from "fast-check";
+import { describe, expect, it, vi } from "vitest";
+import {
+	createScrollObserver,
+	fadeInUp,
+	scaleIn,
+	slideInLeft,
+	slideInRight,
+} from "./animations.js";
 
 function extractNumber(css, re) {
 	const match = css.match(re);
@@ -8,8 +14,8 @@ function extractNumber(css, re) {
 	return Number(match[1]);
 }
 
-describe('animations', () => {
-	it('fadeInUp uses defaults and produces bounded css', () => {
+describe("animations", () => {
+	it("fadeInUp uses defaults and produces bounded css", () => {
 		const transition = fadeInUp({}, undefined);
 		expect(transition.delay).toBe(0);
 		expect(transition.duration).toBe(600);
@@ -26,11 +32,11 @@ describe('animations', () => {
 				expect(y).toBeLessThanOrEqual(40);
 				expect(opacity).toBeGreaterThanOrEqual(0);
 				expect(opacity).toBeLessThanOrEqual(1);
-			})
+			}),
 		);
 	});
 
-	it('slideInLeft and slideInRight bound translateX and opacity', () => {
+	it("slideInLeft and slideInRight bound translateX and opacity", () => {
 		const left = slideInLeft({}, { delay: 10, duration: 20 });
 		const right = slideInRight({}, { delay: 11, duration: 21 });
 		expect(left.delay).toBe(10);
@@ -45,8 +51,14 @@ describe('animations', () => {
 
 				const leftX = extractNumber(leftCss, /translateX\(([-0-9.eE]+)px\)/);
 				const rightX = extractNumber(rightCss, /translateX\(([-0-9.eE]+)px\)/);
-				const leftOpacity = extractNumber(leftCss, /opacity:\s*([-0-9.eE]+)\s*;/);
-				const rightOpacity = extractNumber(rightCss, /opacity:\s*([-0-9.eE]+)\s*;/);
+				const leftOpacity = extractNumber(
+					leftCss,
+					/opacity:\s*([-0-9.eE]+)\s*;/,
+				);
+				const rightOpacity = extractNumber(
+					rightCss,
+					/opacity:\s*([-0-9.eE]+)\s*;/,
+				);
 
 				expect(leftX).not.toBeNull();
 				expect(rightX).not.toBeNull();
@@ -61,11 +73,11 @@ describe('animations', () => {
 				expect(leftOpacity).toBeLessThanOrEqual(1);
 				expect(rightOpacity).toBeGreaterThanOrEqual(0);
 				expect(rightOpacity).toBeLessThanOrEqual(1);
-			})
+			}),
 		);
 	});
 
-	it('scaleIn binds scale and opacity', () => {
+	it("scaleIn binds scale and opacity", () => {
 		const transition = scaleIn({}, undefined);
 		expect(transition.delay).toBe(0);
 		expect(transition.duration).toBe(400);
@@ -83,11 +95,11 @@ describe('animations', () => {
 				expect(scale).toBeLessThanOrEqual(1);
 				expect(opacity).toBeGreaterThanOrEqual(0);
 				expect(opacity).toBeLessThanOrEqual(1);
-			})
+			}),
 		);
 	});
 
-	it('createScrollObserver merges default options', () => {
+	it("createScrollObserver merges default options", () => {
 		const OriginalIntersectionObserver = globalThis.IntersectionObserver;
 
 		class MockIntersectionObserver {
@@ -107,16 +119,22 @@ describe('animations', () => {
 					fc.double({ min: 0, max: 1, noNaN: true }),
 					fc.string(),
 					(threshold, rootMargin) => {
-						const observer = createScrollObserver(callback, { threshold, rootMargin });
+						const observer = createScrollObserver(callback, {
+							threshold,
+							rootMargin,
+						});
 						expect(observer).toBeInstanceOf(MockIntersectionObserver);
 						expect(observer.callback).toBe(callback);
 						expect(observer.options).toEqual({ threshold, rootMargin });
-					}
-				)
+					},
+				),
 			);
 
 			const observer = createScrollObserver(callback);
-			expect(observer.options).toEqual({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+			expect(observer.options).toEqual({
+				threshold: 0.1,
+				rootMargin: "0px 0px -50px 0px",
+			});
 		} finally {
 			globalThis.IntersectionObserver = OriginalIntersectionObserver;
 		}
