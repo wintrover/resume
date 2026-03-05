@@ -14,7 +14,7 @@
       <LanguageSwitcher />
       <div class="contact-info">
         <p><strong>Email:</strong> wintrover@gmail.com</p>
-        <p><strong>Homepage:</strong> wintrover.github.io/resume</p>
+        <p><strong>Homepage:</strong> <a href="https://wintrover.github.io" target="_blank" rel="noopener noreferrer">wintrover.github.io</a></p>
       </div>
       <div class="no-print additional-links">
         <a href="https://github.com/wintrover" target="_blank" rel="noopener noreferrer">
