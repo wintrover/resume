@@ -15,6 +15,20 @@ description: 변경 내용 단위로 원자적 커밋을 만들고 원격으로 
 - git 명령은 항상 `--no-pager`
 - 커밋 단위로 원격 저장소에 푸시한다
 
+## Merge Conflict Resolution
+
+### Rules
+
+- 충돌 시 더 현대적이고 우월한 코드 쪽을 선택
+- 선택 근거는 `npm run check` 및 `npm run build` 통과로 검증
+
+### Checklist
+
+- 최신 의존성/패턴(예: stricter typing, 더 안전한 API)을 사용하는가
+- 보안/로깅/에러 처리 정책을 더 잘 준수하는가
+- 중복/복잡도를 더 줄이는가(DRY, SoC)
+- 변경 검증으로 퇴행이 없는가(`skills/change-validation`)
+
 ## Checklist
 
 - 포맷/린트/타입체크 등 품질 게이트가 통과했는가

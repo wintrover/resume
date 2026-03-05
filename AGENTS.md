@@ -54,13 +54,10 @@ description: SvelteKit 정적 포트폴리오 프로젝트의 작업 원칙, 도
 
 - **설계 및 아키텍처**: `skills/architecture-principles`
 - **로깅 및 예외 처리**: `skills/logging-policy`
-- **코드 품질 및 검증**: `skills/prek-quality-gate`
-- **변경 검증**: `skills/change-validation`
-- **테스트(도입 시)**: `skills/test-isolation`, `skills/property-based-testing`
-- **Git 작업**: `skills/git-atomic-commit`, `skills/merge-conflict-resolution`
-- **컨테이너 기반 재현(필요 시)**: `skills/docker-validation`
+- **코드 품질 및 변경 검증**: `skills/change-validation`
+- **테스트(도입 시)**: `skills/test-isolation`
+- **Git 작업**: `skills/git-atomic-commit`
 
 ## 5. 예외 및 검증 원칙
 
-- 로컬 환경에서 `npm run check` 또는 `npm run build` 재현이 어려우면, Node 18 컨테이너로 동일 절차를 수행한다(`skills/docker-validation`).
-- 모든 변경 사항은 최종적으로 `skills/prek-quality-gate`에 정의된 품질 게이트를 통과해야 한다.
+- 모든 변경 사항은 최종적으로 `skills/change-validation`에 정의된 품질 게이트를 통과해야 한다.
